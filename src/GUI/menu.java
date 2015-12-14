@@ -15,12 +15,13 @@ public class menu extends javax.swing.JFrame {
      * Creates new form menu
      */
     gestion_usuarios usuarios;
-    //gestion_sedes sedes;
+    //Listar_usuarios listar_usuario;
+    gestion_sedes sedes;
     
     public menu() {
         initComponents();
-        //sedes = new gestion_sedes();
-        usuarios = new gestion_usuarios();
+        sedes = new gestion_sedes(this);
+        usuarios = new gestion_usuarios(this);
     }
 
     /**
@@ -249,8 +250,8 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_nomina_jButtonMouseExited
 
     private void gSedes_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gSedes_jButtonActionPerformed
-        //sedes.setVisible(true);
-        //this.setVisible(false);
+        sedes.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_gSedes_jButtonActionPerformed
 
     /**

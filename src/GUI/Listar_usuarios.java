@@ -18,11 +18,11 @@ public class Listar_usuarios extends javax.swing.JFrame {
     /**
      * Creates new form gestion
      */
-    
+    menu menu;
     gestion_usuarios usuarios;
-    public Listar_usuarios() {
+    public Listar_usuarios(gestion_usuarios usuarios) {
         initComponents();
-        usuarios = new gestion_usuarios();
+        this.usuarios = usuarios;
         DefaultTableModel modeloTabla = (DefaultTableModel) jTableListarUsuarios.getModel();
         modeloTabla.addRow(new Object[]{"Daniel", "1", "2", "3", "4", "5", "6", "Administrador", "Activo", "7"});
         modeloTabla.addRow(new Object[]{"Marcelo", "1", "2", "3", "4", "5", "6", "Gerente", "Inactivo", "7"});
@@ -218,47 +218,7 @@ public class Listar_usuarios extends javax.swing.JFrame {
         } catch (Exception ex) {}
     }//GEN-LAST:event_jTableListarUsuariosMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Listar_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Listar_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Listar_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Listar_usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Listar_usuarios().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Volver_jButton;

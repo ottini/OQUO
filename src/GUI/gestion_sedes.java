@@ -21,19 +21,22 @@ public class gestion_sedes extends javax.swing.JFrame {
     Sede sedePrincipal;
     ConsultarDatos consultasBD;
     IngresarDatos ingresosBD;
-    menu menuPrincipal;
     
+    private menu menu;
     
+    private Listar_sedes listaSedes;
     /**
      * Creates new form gestion_sedes
      */
-    public gestion_sedes() {
+    public gestion_sedes(menu menu) {
         initComponents();
         sedePrincipal = new Sede();
         consultasBD = new ConsultarDatos();
         ingresosBD = new IngresarDatos();
-        menuPrincipal = new menu();
         
+        
+        listaSedes = new Listar_sedes(this);
+        this.menu = menu;
         
         nombreSede_jTextField.setEnabled(false);
         direccionSede_jTextField.setEnabled(false);
@@ -420,8 +423,8 @@ public class gestion_sedes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menu_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_jButtonActionPerformed
+        menu.setVisible(true);
         this.setVisible(false);
-        menuPrincipal.setVisible(true);
     }//GEN-LAST:event_menu_jButtonActionPerformed
 
     private void salir_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir_jButtonActionPerformed
@@ -481,7 +484,8 @@ public class gestion_sedes extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreSede_jTextFieldActionPerformed
 
     private void listar_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listar_jButtonActionPerformed
-        
+        listaSedes.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_listar_jButtonActionPerformed
 
     private void estadoSede_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoSede_jComboBoxActionPerformed
@@ -595,37 +599,7 @@ public class gestion_sedes extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(gestion_sedes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(gestion_sedes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(gestion_sedes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(gestion_sedes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new gestion_sedes().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EstadoSede_jLabel;
